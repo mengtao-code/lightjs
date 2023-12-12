@@ -1,6 +1,10 @@
 node_modules
-coverage
-.idea
-public/*.woff
-public/*.woff2
 .DS_Store
+.github
+.prettierignore
+jest.config.js
+jest.setup.js
+prettier.config.js
+README.md
+tsconfig.json
+webpack.config.js
