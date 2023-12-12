@@ -1,7 +1,7 @@
 {
-    "name": "templatejs",
+    "name": "lightjs",
     "version": "1.0.0",
-    "description": "templatejs",
+    "description": "lightjs",
     "private": true,
     "scripts": {
         "test": "jest src",
