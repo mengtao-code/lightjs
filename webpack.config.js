@@ -60,11 +60,15 @@ if (process.env.PUBLIC_PATH) {
     webpackConfigs.output.publicPath = '/'
 }
 
-if(process.env.LIBRARY_NAME) {
+if (process.env.LIBRARY_NAME) {
     webpackConfigs.output.library = {
         type: 'umd',
         name: process.env.LIBRARY_NAME
     }
+}
+
+if (process.env.ENTRY) {
+    webpackConfigs.entry = process.env.ENTRY
 }
 
 module.exports = webpackConfigs;
