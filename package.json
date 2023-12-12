@@ -4,7 +4,7 @@
   "description": "lightjs",
   "private": true,
   "publishConfig": {
-    "@YOUR-USERNAME:registry": "https://npm.pkg.github.com"
+    "mengtao-code:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "test": "jest src",
@@ -13,7 +13,7 @@
     "lint": "eslint src",
     "format": "npx prettier --write src"
   },
-  "author": "mengtaoxin",
+  "author": "mengtao-code",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.21.4",
