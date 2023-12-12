@@ -1,23 +1,5 @@
-import _ from 'lodash';
-import numRef from './ref.json';
+import { HttpRequestUtils } from 'lightjs/utils/HttpRequestUtils'
+import {Navigate, Route, Router} from './lightjs/router/Router'
 
-export function numToWord(num:number) {
-    return _.reduce(
-        numRef,
-        (accum, ref) => {
-            return ref.num === num ? ref.word : accum;
-        },
-        ''
-    );
-}
-
-export function wordToNum(word:number) {
-    return _.reduce(
-        numRef,
-        (accum, ref) => {
-            // @ts-ignore
-            return ref.word === word && word.toLowerCase() ? ref.num : accum;
-        },
-        -1
-    );
-}
+export {Router, Navigate, HttpRequestUtils}
+export type { Route }
