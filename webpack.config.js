@@ -2,13 +2,13 @@
 const path = require('path')
 
 const webpackConfigs = {
-    entry: './src/index.d.ts',
+    entry: './src/index.ts',
     module: {
         rules: [
             {
                 test: /\.(ts|js)x?$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: 'ts-loader'
             },
             {
                 test: /\.css$/i,
@@ -30,9 +30,13 @@ const webpackConfigs = {
     },
     context: path.resolve(__dirname, './'),
     output: {
-        path: path.resolve(__dirname, 'public'),
-        filename: 'bundle/bundle.js',
-        chunkFilename: '[name].js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'index.js',
+        chunkFilename: '[name].js',
+        library: {
+            type: "umd",
+            name: "lightjs"
+        }
     },
     devServer: {
         historyApiFallback: true,
@@ -42,33 +46,6 @@ const webpackConfigs = {
         compress: true,
         port: 9000
     }
-}
-
-if (process.env.MODE === 'development') {
-    webpackConfigs.devtool = 'eval-source-map'
-}
-
-if (process.env.MODE === 'production') {
-    webpackConfigs.mode = 'production'
-} else {
-    webpackConfigs.mode = 'development'
-}
-
-if (process.env.PUBLIC_PATH) {
-    webpackConfigs.output.publicPath = process.env.PUBLIC_PATH
-} else {
-    webpackConfigs.output.publicPath = '/'
-}
-
-if (process.env.LIBRARY_NAME) {
-    webpackConfigs.output.library = {
-        type: 'umd',
-        name: process.env.LIBRARY_NAME
-    }
-}
-
-if (process.env.ENTRY) {
-    webpackConfigs.entry = process.env.ENTRY
 }
 
 module.exports = webpackConfigs;

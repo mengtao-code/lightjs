@@ -1,11 +1,23 @@
-import App from 'App'
-import {createElement} from 'react'
-import {createRoot} from 'react-dom/client'
-import '@fontsource/roboto'
-import 'style.css'
+import _ from 'lodash';
+import numRef from './ref.json';
 
-const app = document.getElementById('app')
-if (app) {
-    const root = createRoot(app)
-    root.render(createElement(App))
+export function numToWord(num:number) {
+    return _.reduce(
+        numRef,
+        (accum, ref) => {
+            return ref.num === num ? ref.word : accum;
+        },
+        ''
+    );
+}
+
+export function wordToNum(word:number) {
+    return _.reduce(
+        numRef,
+        (accum, ref) => {
+            // @ts-ignore
+            return ref.word === word && word.toLowerCase() ? ref.num : accum;
+        },
+        -1
+    );
 }

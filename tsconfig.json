@@ -15,7 +15,10 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "target": "ESNext"
+    "target": "ESNext",
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "dist"
   },
   "include": [
     "src/**/*"
