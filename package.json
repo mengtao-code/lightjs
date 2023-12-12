@@ -1,8 +1,8 @@
 {
   "name": "@mengtao-code/lightjs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "lightjs",
-  "private": true,
+  "private": false,
   "publishConfig": {
     "@mengtao-code:registry": "https://npm.pkg.github.com"
   },
