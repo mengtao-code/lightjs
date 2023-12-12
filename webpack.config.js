@@ -45,6 +45,16 @@ const webpackConfigs = {
         },
         compress: true,
         port: 9000
+    },
+    externals: {
+        react: 'react',
+        'react-dom': 'react-dom',
+        dayjs: 'dayjs',
+        'aws-amplify': 'aws-amplify',
+        '@fontsource/roboto': '@fontsource/roboto',
+        '@fontsource/material-icons': '@fontsource/material-icons',
+        '@aws-crypto/client-browser': '@aws-crypto/client-browser',
+        '@aws-amplify/ui-react': '@aws-amplify/ui-react'
     }
 }
 
