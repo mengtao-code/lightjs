@@ -11,13 +11,11 @@
     "moduleResolution": "node",
     "noImplicitAny": true,
     "preserveConstEnums": true,
-    "removeComments": false,
+    "removeComments": true,
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "target": "ES6",
-    "declaration": true,
-    "declarationDir": "./types"
+    "target": "ESNext"
   },
   "include": [
     "src/**/*"

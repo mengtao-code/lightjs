@@ -31,7 +31,7 @@ const webpackConfigs = {
     context: path.resolve(__dirname, './'),
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: 'bundle/index.js',
+        filename: 'bundle/bundle.js',
         chunkFilename: '[name].js'
     },
     devServer: {
@@ -46,8 +46,6 @@ const webpackConfigs = {
 
 if (process.env.MODE === 'development') {
     webpackConfigs.devtool = 'eval-source-map'
-}else {
-    webpackConfigs.devtool = 'source-map'
 }
 
 if (process.env.MODE === 'production') {
@@ -63,10 +61,10 @@ if (process.env.PUBLIC_PATH) {
 }
 
 if (process.env.LIBRARY_NAME) {
-    webpackConfigs.output.globalObject = 'this'
-    webpackConfigs.output.library = process.env.LIBRARY_NAME
-    webpackConfigs.output.libraryTarget = 'umd'
-    webpackConfigs.output.umdNamedDefine = true
+    webpackConfigs.output.library = {
+        type: 'umd',
+        name: process.env.LIBRARY_NAME
+    }
 }
 
 if (process.env.ENTRY) {
