@@ -1,5 +1,10 @@
-import React, { ReactElement, useEffect, useState } from 'react'
-import { Route } from './Types'
+import React, {ReactElement, useEffect, useState} from 'react'
+
+export interface Route {
+    hash: string
+    component: ReactElement
+}
+
 
 const goto = (hash: string, home: ReactElement, notFound: ReactElement, routes: Route[]): ReactElement => {
     for (const singleRouter of routes) {
@@ -19,7 +24,7 @@ type RouterProps = {
     notFound: ReactElement
 }
 
-export const Router = ({ routes, home, notFound }: RouterProps) => {
+export const Router = ({routes, home, notFound}: RouterProps) => {
     const [hash, setHash] = useState(document.location.hash)
     useEffect(() => {
         console.log(`hash:${hash}`)
@@ -47,7 +52,7 @@ export const Navigate = {
         }
         window.location.href = `?${params}${hash}`
     },
-    goHome: ()=>{
+    goHome: () => {
         window.location.href = '/#/'
     }
 }
