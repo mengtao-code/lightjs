@@ -4,7 +4,7 @@
   "description": "lightjs",
   "private": true,
   "publishConfig": {
-    "mengtao-code:registry": "https://npm.pkg.github.com"
+    "@YOUR-USERNAME:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "test": "jest src",
