@@ -2,7 +2,7 @@
 const path = require('path')
 
 const webpackConfigs = {
-    entry: './src/index.ts',
+    entry: './src/index.d.ts',
     module: {
         rules: [
             {
