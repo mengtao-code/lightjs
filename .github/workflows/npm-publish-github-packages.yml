@@ -10,6 +10,7 @@ on:
 env:
   LIBRARY_NAME: lightjs
   ENTRY: ./src/lightjs/index.ts
+  MODE: production
 
 jobs:
   publish-gpr:
